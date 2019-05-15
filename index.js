@@ -41,6 +41,8 @@ var saferCrypto = (function (exports) {
   freeze(SaferPromise);
   freeze(prototype);
 
+  /*! (c) Andrea Giammarchi - ISC */
+
   const {freeze: freeze$1, defineProperty, getOwnPropertyNames, getPrototypeOf} = Object;
   const isMethod = (self, key) => (
     typeof self[key] === 'function' &&
@@ -80,6 +82,6 @@ var saferCrypto = (function (exports) {
 
   
 
-  return SaferPromise;
+  return index;
 
 }({}));

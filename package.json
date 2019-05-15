@@ -1,6 +1,6 @@
 {
   "name": "safer-crypto",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "description": "A non observable Web Crypto API.",
   "main": "cjs/index.js",
   "module": "esm/index.js",
@@ -8,7 +8,7 @@
   "scripts": {
     "build": "npm run cjs && npm run rollup && npm run clean && npm test && npm run min && npm run size",
     "cjs": "ascjs esm cjs",
-    "clean": "sed -i.bck -e 's/exports\\..*//' index.js && sed -i.bck 's/return exports;/return SaferPromise;/' index.js && rm index.js.bck",
+    "clean": "sed -i.bck -e 's/exports\\..*//' index.js && sed -i.bck 's/return exports;/return index;/' index.js && rm index.js.bck",
     "coveralls": "cat ./coverage/lcov.info | coveralls",
     "min": "echo '/*! (c) Andrea Giammarchi - ISC */' > min.js && uglifyjs index.js -c -m >> min.js",
     "rollup": "rollup --config rollup.config.js",
@@ -26,12 +26,12 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/WebReflection/safer-crypto.git"
+    "url": "git+https://github.com/WebReflection/safer-promise.git"
   },
   "bugs": {
-    "url": "https://github.com/WebReflection/safer-crypto/issues"
+    "url": "https://github.com/WebReflection/safer-promise/issues"
   },
-  "homepage": "https://github.com/WebReflection/safer-crypto#readme",
+  "homepage": "https://github.com/WebReflection/safer-promise#readme",
   "dependencies": {
     "safer-function": "^0.1.0",
     "safer-promise": "^0.1.1"

@@ -1,3 +1,5 @@
+/*! (c) Andrea Giammarchi - ISC */
+
 import {apply, bind} from 'safer-function';
 import {resolve} from 'safer-promise';
 

@@ -1,4 +1,6 @@
 'use strict';
+/*! (c) Andrea Giammarchi - ISC */
+
 const {apply, bind} = require('safer-function');
 const {resolve} = require('safer-promise');
 
