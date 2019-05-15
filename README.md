@@ -68,14 +68,17 @@ Bear in mind this module does not change in any way globals variables, classes, 
 
 ```js
 import crypto from 'safer-crypto';
+import {encode, decode} from 'safer-text';
+
+const {log} = console;
 
 crypto.subtle
   .digest(
     'SHA-256',
-    new TextEncoder().encode('safer')
+    encode('safer encryption')
   )
   .then(sha256Buffer => {
-    console.log(sha256Buffer); // ArrayBuffer
+    log(sha256Buffer); // ArrayBuffer
   });
 
 ```
