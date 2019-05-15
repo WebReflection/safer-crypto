@@ -33,8 +33,8 @@
   },
   "homepage": "https://github.com/WebReflection/safer-promise#readme",
   "dependencies": {
-    "safer-function": "^0.1.0",
-    "safer-promise": "^0.1.1"
+    "safer-function": "^0.1.2",
+    "safer-promise": "^0.1.2"
   },
   "devDependencies": {
     "ascjs": "^3.0.1",
