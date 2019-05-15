@@ -6,6 +6,7 @@ const {resolve} = require('safer-promise');
 
 const {freeze, defineProperty, getOwnPropertyNames, getPrototypeOf} = Object;
 const isMethod = (self, key) => (
+  !/^(?:caller|callee|arguments)$/.test(key) &&
   typeof self[key] === 'function' &&
   key !== 'constructor'
 );
