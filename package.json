@@ -1,0 +1,50 @@
+{
+  "name": "safer-crypto",
+  "version": "0.0.0",
+  "description": "A non observable Web Crypto API.",
+  "main": "cjs/index.js",
+  "module": "esm/index.js",
+  "unpkg": "min.js",
+  "scripts": {
+    "build": "npm run cjs && npm run rollup && npm run clean && npm test && npm run min && npm run size",
+    "cjs": "ascjs esm cjs",
+    "clean": "sed -i.bck -e 's/exports\\..*//' index.js && sed -i.bck 's/return exports;/return SaferPromise;/' index.js && rm index.js.bck",
+    "coveralls": "cat ./coverage/lcov.info | coveralls",
+    "min": "echo '/*! (c) Andrea Giammarchi - ISC */' > min.js && uglifyjs index.js -c -m >> min.js",
+    "rollup": "rollup --config rollup.config.js",
+    "size": "cat index.js | wc -c;cat min.js | wc -c;gzip -c9 min.js | wc -c",
+    "test": "istanbul cover test/index.js"
+  },
+  "keywords": [
+    "secure",
+    "function",
+    "call",
+    "apply",
+    "bind"
+  ],
+  "author": "Andrea Giammarchi",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WebReflection/safer-crypto.git"
+  },
+  "bugs": {
+    "url": "https://github.com/WebReflection/safer-crypto/issues"
+  },
+  "homepage": "https://github.com/WebReflection/safer-crypto#readme",
+  "dependencies": {
+    "safer-function": "^0.1.0",
+    "safer-promise": "^0.1.1"
+  },
+  "devDependencies": {
+    "ascjs": "^3.0.1",
+    "coveralls": "^3.0.3",
+    "istanbul": "^0.4.5",
+    "rollup": "^1.11.3",
+    "rollup-plugin-node-resolve": "^4.2.4",
+    "uglify-es": "^3.3.9"
+  },
+  "directories": {
+    "test": "test"
+  }
+}
