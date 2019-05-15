@@ -64,7 +64,7 @@ While it is true that having unknown 3rd parts scripts interfering with your cod
 
 Based on [safer-promise](https://github.com/WebReflection/safer-promise#safer-promise), hence on [safer-function](https://github.com/WebReflection/safer-function#safer-function), this module should be included as top-most dependency, to ensure no third parts or polyfill could've interfered with the native version of its dependencies: the `Function.prototype` and the `Promise`.
 
-Bear in mind this module does not change in any way globals variables, classes, or prototypes, it simply sandboxes in a not observable way.
+Bear in mind this module does not change in any way globals variables, classes, or prototypes, it simply secures a custom `crypto` and its `subtle` reference in a not observable way.
 
 ```js
 import crypto from 'safer-crypto';
