@@ -46,6 +46,7 @@ var saferCrypto = (function (exports) {
 
   const {freeze: freeze$1, defineProperty, getOwnPropertyNames, getPrototypeOf} = Object;
   const isMethod = (self, key) => (
+    !/^(?:caller|callee|arguments)$/.test(key) &&
     typeof self[key] === 'function' &&
     key !== 'constructor'
   );
